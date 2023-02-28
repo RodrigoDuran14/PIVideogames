@@ -1,7 +1,13 @@
-const axios = require("axios");
+const {allGenres, verifyDb} = require("../controllers/genresControllers")
 
-const getAllGenres = (req, res, next) => {
-  res.send("get all genres");
+const getAllGenres = async (req, res, next) => {
+  try {
+    verifyDb()
+    const dbGenres = await allGenres();
+    res.send(dbGenres)
+  } catch (error) {
+    next(error)
+  }
 };
 
 module.exports = { getAllGenres };

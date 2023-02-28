@@ -1,14 +1,13 @@
 const { Router } = require("express");
-const axios = require("axios")
 const {
-  getAllVideoGames,
+  getVideoGames,
   getVideogamesById,
   postVideogames,
 } = require("../handlers/videogameHandler");
 
 const router = Router();
 
-router.get("/", getAllVideoGames);
+router.get("/", getVideoGames);
 router.get("/:id", getVideogamesById);
 router.post("/", postVideogames);
 
