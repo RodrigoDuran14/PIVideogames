@@ -57,7 +57,7 @@ const getVideogameByName = async (name) => {
 };
 
 const getVideogameById = async (id) => {
-  if (typeof id === "number") {
+  if (!/^[0-9A-F]{8}-[0-9A-F]{4}-[4][0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i.test(id)) {
     const result = await axios.get(`${URL_API}/games/${id}?key=${API_KEY}`);
     const gameDetail = {
       id: result.data.id,
