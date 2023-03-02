@@ -35,8 +35,13 @@ const validatePostVideogame = (data) => {
     throw new Error("Rating must be a number")
   }
 
-  if(rating < 0 && rating > 5){
+  if(rating <= 0 || rating >=6){
     throw new Error("Rating must be a number between 0 and 5")
+  }
+
+  if(!/^[0-9.]+$/i.test(rating)){
+    throw new Error("Rating must be a number between 0 and 5")
+
   }
 
   //----------image----------------
