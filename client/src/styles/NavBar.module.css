@@ -1,0 +1,15 @@
+.navBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgb(135, 130, 130);
+  box-shadow: 5px 2px 5px #000;
+  height: 50px;
+}
+
+.link{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 8px;
+}
