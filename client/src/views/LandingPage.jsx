@@ -1,6 +1,4 @@
-import React from "react";
 import {Link} from "react-router-dom";
-import Card from "../components/Card";
 import style from "../styles/LandingPage.module.css"
 
 export default function LandingPage(){
@@ -10,8 +8,6 @@ export default function LandingPage(){
     <Link to="/home">
       <button className={style.btn}>ACCESS</button>
     </Link>
-
-    <Card />
     </div>
   )
 }
