@@ -6,8 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(rgba(155, 155, 159, 0.299), rgba(17, 19, 24, 0.036)), url(../src/images/videogamesBackground.jpg) no-repeat;
-  background-size: cover;
+  background: linear-gradient(rgba(155, 155, 159, 0.299), rgba(17, 19, 24, 0.036)), url(../src/images/videogamesBackground.jpg) no-repeat fixed;
 }
 
 code {

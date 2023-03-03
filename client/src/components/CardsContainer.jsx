@@ -1,8 +1,8 @@
 import Card from "./Card";
-import style from "../styles/CardContainer.module.css";
-import { useSelector } from "react-redux";
+import style from "../styles/CardsContainer.module.css";
+import { useSelector} from "react-redux";
 
-export default function CardContainer() {
+export default function CardsContainer() {
   const videogames = useSelector((state) => state.videogames);
 
   return (

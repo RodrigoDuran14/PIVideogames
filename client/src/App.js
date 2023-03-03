@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, useLocation } from "react-router-dom";
-import { LandingPage } from "./views";
+import { LandingPage, Home } from "./views";
 import NavBar from "./components/NavBar.jsx";
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       {location.pathname !== "/" && <NavBar />}
       <Route exact path="/" component={LandingPage} />
+      <Route path="/home" component={Home} />
     </div>
   );
 }
