@@ -32,7 +32,7 @@ const getDbVideogames = async () => {
   const db = await Videogame.findAll({
     include: {
       model: Genre,
-      attributes: ["id", "name"],
+      attributes: ["id","name"],
       through: { attributes: [] },
     },
   });
