@@ -54,7 +54,7 @@ const postVideogames = async (req, res, next) => {
 
       const dbgenres = await Genre.findAll({ where: { name: genres } });
 
-      postGame.addGenres(dbgenres);
+      await postGame.addGenres(dbgenres);
 
     res.send("post videogame");
   } catch (error) {
