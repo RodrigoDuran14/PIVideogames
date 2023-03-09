@@ -10,8 +10,9 @@ export default function Card({ id, image, name, genres }) {
         <h5>
           {genres && typeof genres === "object"
             ? genres.map((g) => g.name)
-            : genres}
+            : typeof genres === "array" ? genres : genres}
         </h5>
+        {console.log("CARD: ",id,image,name,genres)}
       </div>
     </Link>
   );

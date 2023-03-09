@@ -1,5 +1,7 @@
 .cardContainer{
   width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: row;
   border-radius: 10px;
@@ -7,4 +9,8 @@
   flex-wrap: wrap;
   gap: 1em;
   margin-top: 70px;
+}
+
+.paginado{
+  display: inline;
 }
