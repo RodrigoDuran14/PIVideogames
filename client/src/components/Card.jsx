@@ -6,14 +6,10 @@ export default function Card({ id, image, name, genres }) {
     <Link to={`/games/${id}`}>
       <div className={style.container}>
         <img src={image} alt="videogame" />
-        <h4>
-          {genres && typeof genres === "object"
-            ? genres.map((g) => g.name)
-            : genres}
-            
-        </h4>
         <h3>{name}</h3>
+        <h5>{genres}</h5>
       </div>
+      {console.log(genres)}
     </Link>
   );
 }
