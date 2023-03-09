@@ -7,13 +7,9 @@ export default function Card({ id, image, name, genres }) {
       <div className={style.container}>
         <img src={image} alt="videogame" />
         <h3>{name}</h3>
-        <h5>
-          {genres && typeof genres === "object"
-            ? genres.map((g) => g.name)
-            : typeof genres === "array" ? genres : genres}
-        </h5>
-        {console.log("CARD: ",id,image,name,genres)}
+        <h5>{genres}</h5>
       </div>
+      {console.log(genres)}
     </Link>
   );
 }

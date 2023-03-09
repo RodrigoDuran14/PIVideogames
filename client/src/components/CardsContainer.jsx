@@ -20,7 +20,7 @@ export default function CardsContainer() {
   return (
     <div>
       <div className={style.cardContainer}>
-        {currentGames?.map((game) => {
+        {currentGames.map((game) => {
           return (
             <Card
               id={game.id}
@@ -31,7 +31,6 @@ export default function CardsContainer() {
           );
         })}
       </div>
-      {console.log(currentGames)}
       <div className={style.paginado}>
         <Paginado
           gamesPerPage={gamesPerPage}

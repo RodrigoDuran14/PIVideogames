@@ -32,11 +32,26 @@ const getDbVideogames = async () => {
   const db = await Videogame.findAll({
     include: {
       model: Genre,
-      attributes: ["id","name"],
+      attributes: ["name"],
       through: { attributes: [] },
     },
   });
-  return db;
+
+  const dbfilter = db.map(g => {
+    let a = []
+    for(let i =0; i<g.genres.length;i++){
+      a.push(g.genres[i].name)
+    }
+    return {
+      id: g.id,
+      name: g.name,
+      image: g.image,
+      rating: g.rating,
+      platforms: g.platforms,
+      genres: a,
+    }
+  })
+  return dbfilter;
 };
 
 const getAllGames = async () => {

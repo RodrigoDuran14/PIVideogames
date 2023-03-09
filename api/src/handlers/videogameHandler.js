@@ -44,15 +44,15 @@ const postVideogames = async (req, res, next) => {
       validatePostVideogame(req.body);
 
       const postGame = await Videogame.create({
-        name,
-        description,
-        image,
-        rating,
-        platforms,
-        released,
+          name,
+          description,
+          image,
+          rating,
+          platforms,
+          released,
       });
 
-      const dbgenres = await Genre.findAll({ where: { name: genres } });
+      const dbgenres = await Genre.findAll({ where:  {name: genres} });
 
       await postGame.addGenres(dbgenres);
 

@@ -157,6 +157,7 @@ export default function Create() {
         <div>
           <label>PLATFORMS: </label>
           <select onChange={e => handleSelectPlatform(e)}>
+            <option disabled >Platforms</option>
             {platforms.map((p) => (
               <option key={p} value={p}>
                 {p}
@@ -172,6 +173,7 @@ export default function Create() {
         <div>
           <label>GENRES: </label>
           <select onChange={e => handleSelectGenre(e)} >
+          <option disabled >Genres</option>
             {genres.map((g) => (
                 <option value={g}>
                   {g}
