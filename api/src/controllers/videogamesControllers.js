@@ -19,9 +19,9 @@ const getApiVideogames = async () => {
         name: g.name,
         image: g.background_image,
         released: g.released,
-        genres: g.genres.map((genre) => genre.name),
+        genres: g.genres.map((genre) => genre.name) + " ",
         rating: g.rating,
-        platforms: g.platforms.map((p) => p.platform.name),
+        platforms: g.platforms.map((p) => p.platform.name) + " ",
       });
     });
   }
@@ -51,13 +51,14 @@ const getDbVideogames = async () => {
       genres: a,
     }
   })
+
   return dbfilter;
 };
 
 const getAllGames = async () => {
   const apiGames = await getApiVideogames();
   const dbGames = await getDbVideogames();
-  const allGames = [...apiGames, ...dbGames];
+  const allGames = [...dbGames, ...apiGames];
   return allGames;
 };
 
@@ -80,9 +81,9 @@ const getVideogameById = async (id) => {
       image: result.data.background_image,
       released: result.data.released,
       description: result.data.description_raw,
-      genres: result.data.genres.map((genre) => genre.name),
+      genres: " " + result.data.genres.map((genre) => genre.name) + " ",
       rating: result.data.rating,
-      platforms: result.data.platforms.map((p) => p.platform.name),
+      platforms: " " + result.data.platforms.map((p) => p.platform.name) + " ",
     };
     return gameDetail;
   } else {
@@ -93,7 +94,19 @@ const getVideogameById = async (id) => {
         through: { attributes: [] },
       },
     });
-    return resultDb
+
+    const detailDb = {
+      id: resultDb.id,
+      name: resultDb.name,
+      image: resultDb.image,
+      released: resultDb.released,
+      description: resultDb.description,
+      rating: resultDb.rating,
+      platforms: resultDb.platforms + " ",
+      genres: resultDb.genres.map(g=>g.name) + " ",
+    }
+
+    return detailDb
   }
 };
 

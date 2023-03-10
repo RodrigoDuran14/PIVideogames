@@ -12,18 +12,20 @@
 
 .numbers {
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 700;
   list-style: none;
   border: none;
   border-radius: 4px;    
-  color: #fff;
+  color: #000;
   text-align: center;
   margin-left: 10px;
   cursor: pointer;
   padding: 5px;
+  -webkit-text-stroke: 0.8px #fff;
+
 }
 
 .numbers:hover{
-  background-color: #fff;
+  background-color: #0bf607;
   color: #000;
 }
