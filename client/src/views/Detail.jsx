@@ -13,7 +13,7 @@ export default function Detail() {
 
   useEffect(() => {
     dispatch(getVideogamesById(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <div className={style.container}>

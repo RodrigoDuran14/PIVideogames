@@ -8,7 +8,7 @@ export default function CardsContainer() {
   const videogames = useSelector((state) => state.videogames);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [gamesPerPage, setGamesPerPage] = useState(15);
+  const [gamesPerPage] = useState(15);
   const indexOfLastGame = currentPage * gamesPerPage;
   const indexOfFirstGame = indexOfLastGame - gamesPerPage;
   const currentGames = videogames.slice(indexOfFirstGame, indexOfLastGame);
@@ -23,6 +23,7 @@ export default function CardsContainer() {
         {currentGames.map((game) => {
           return (
             <Card
+            key={game.id}
               id={game.id}
               name={game.name}
               image={game.image}

@@ -9,7 +9,6 @@ export default function Card({ id, image, name, genres }) {
         <h3>{name}</h3>
         <h5>{genres}</h5>
       </div>
-      {console.log(genres)}
     </Link>
   );
 }

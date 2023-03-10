@@ -13,7 +13,7 @@ export default function paginado({gamesPerPage, videogames, paginado}){
         {pageNumbers && pageNumbers.map(number => {
           return( 
             <li key={number} className={style.pages} >
-              <a onClick={()=> paginado(number)} className={style.numbers} >{number}</a>
+              <button onClick={()=> paginado(number)} className={style.numbers} >{number}</button>
             </li>
           )
         })}
