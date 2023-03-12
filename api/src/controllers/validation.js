@@ -1,7 +1,7 @@
 const validatePostVideogame = (data) => {
   const {name, description, rating, image, platforms, released, genres} = data
 
-  if(!name || !description || !rating || !image || !platforms || !released || !genres){
+  if(!name || !description || !rating || !platforms || !released || !genres){
     throw new Error("All the fields are required")
   }
 

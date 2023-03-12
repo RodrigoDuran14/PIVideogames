@@ -8,7 +8,7 @@ export default function NavBar() {
   return (
     <div className={style.navBar}>
       {console.log(location.pathname)}
-      {location.pathname == "/home" && <SearchBar />}
+      {location.pathname === "/home" && <SearchBar />}
 
       {location.pathname !== "/home" && (
         <Link to="/home" className={style.link}>

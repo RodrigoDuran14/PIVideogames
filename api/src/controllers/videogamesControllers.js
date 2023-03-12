@@ -19,9 +19,9 @@ const getApiVideogames = async () => {
         name: g.name,
         image: g.background_image,
         released: g.released,
-        genres: g.genres.map((genre) => genre.name) + " ",
+        genres: g.genres.map((genre) => " " + genre.name)+ " ",
         rating: g.rating,
-        platforms: g.platforms.map((p) => p.platform.name) + " ",
+        platforms: g.platforms.map((p) =>" " + p.platform.name)+" ",
       });
     });
   }
@@ -40,15 +40,15 @@ const getDbVideogames = async () => {
   const dbfilter = db.map(g => {
     let a = []
     for(let i =0; i<g.genres.length;i++){
-      a.push(g.genres[i].name)
+      a.push(" " + g.genres[i].name)
     }
     return {
       id: g.id,
       name: g.name,
       image: g.image,
       rating: g.rating,
-      platforms: g.platforms,
-      genres: a,
+      platforms: " " +g.platforms+ " ",
+      genres: a+ " ",
     }
   })
 
@@ -81,9 +81,9 @@ const getVideogameById = async (id) => {
       image: result.data.background_image,
       released: result.data.released,
       description: result.data.description_raw,
-      genres: " " + result.data.genres.map((genre) => genre.name) + " ",
+      genres:  result.data.genres.map((genre) => " " + genre.name) + " ",
       rating: result.data.rating,
-      platforms: " " + result.data.platforms.map((p) => p.platform.name) + " ",
+      platforms: result.data.platforms.map((p) => " " + p.platform.name) + " ",
     };
     return gameDetail;
   } else {
@@ -103,7 +103,7 @@ const getVideogameById = async (id) => {
       description: resultDb.description,
       rating: resultDb.rating,
       platforms: resultDb.platforms + " ",
-      genres: resultDb.genres.map(g=>g.name) + " ",
+      genres: resultDb.genres.map(g=>" " + g.name) + " ",
     }
 
     return detailDb

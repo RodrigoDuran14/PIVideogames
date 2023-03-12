@@ -12,4 +12,15 @@
   color: #fff;
   font-size: 1.5rem;
   padding: 8px;
+  font-weight: 700;
+  -webkit-text-stroke: 0.8px #000;
+  text-transform: uppercase;
+  text-shadow: 3px 3px #000;
+}
+
+.link:hover{
+  color: #000;
+  -webkit-text-stroke: 0.8px #fff;
+  text-shadow: 3px 3px #fff;
+  transform: scale(1.2);
 }

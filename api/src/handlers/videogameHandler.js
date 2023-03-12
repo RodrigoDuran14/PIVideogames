@@ -46,7 +46,7 @@ const postVideogames = async (req, res, next) => {
       const postGame = await Videogame.create({
           name,
           description,
-          image,
+          image: (image? image : "http://www.cheatsheet.com/wp-content/uploads/2015/08/master-chief-halo.jpg"), 
           rating,
           platforms,
           released,
