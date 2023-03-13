@@ -35,7 +35,7 @@ const validatePostVideogame = (data) => {
     throw new Error("Rating must be a number")
   }
 
-  if(rating <= 0 || rating >=6){
+  if(rating <= 0 || rating >6){
     throw new Error("Rating must be a number between 0 and 5")
   }
 
@@ -46,9 +46,9 @@ const validatePostVideogame = (data) => {
 
   //----------image----------------
 
-  if(typeof image !== "string"){
-    throw new Error("Image must be a string")
-  }
+  //if(typeof image !== "string"){
+  //  throw new Error("Image must be a string")
+  //}
 
   //------------released---------------
 

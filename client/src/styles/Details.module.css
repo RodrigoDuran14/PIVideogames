@@ -49,7 +49,7 @@
 .flex{
   display: flex;
   gap: 20px;
-  margin: 0;
+  width: 90%;
 }
 
 .subtitles{
@@ -74,4 +74,10 @@
 .array{
   font-size: 1.3rem;
   font-weight: 700;
+}
+
+@media (max-width: 1000px){
+  .c{
+    display: inline;
+  }
 }
