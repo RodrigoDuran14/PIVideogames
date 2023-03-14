@@ -63,7 +63,7 @@ const rootReducer = (state = initialState, action) => {
     case FILTER_BY_ORIGIN:
       const originGame = state.allVideogames;
       const originFilter =
-        action.payload === "created"
+        action.payload === "Created"
           ? originGame.filter((g) => g.createdInDb)
           : originGame.filter((g) => !g.createdInDb);
       return {
@@ -77,19 +77,19 @@ const rootReducer = (state = initialState, action) => {
         action.payload === "ASC"
           ? state.videogames.sort(function (a, b) {
               if (a.name > b.name) {
-                return -1;
+                return 1;
               }
               if (b.name > a.name) {
-                return 1;
+                return -1;
               }
               return 0;
             })
           : state.videogames.sort(function (a, b) {
               if (a.name > b.name) {
-                return 1;
+                return -1;
               }
               if (b.name > a.name) {
-                return -1;
+                return 1;
               }
               return 0;
             });
