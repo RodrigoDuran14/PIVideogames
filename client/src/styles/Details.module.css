@@ -23,21 +23,20 @@
   padding: 10px;
   margin-bottom: 15px;
 }
-.imgContainer{
+.imageContainer{
+  width:70%;
   padding: 10px;
-  margin: 10px;
 }
 
 .img{
-  width: 90%;
+  width:100%;
   height: 70%;
   border-radius: 5px;
-  margin-right: 10px;
   margin-top: 30px;
 }
 
 .infoContainer{
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -48,8 +47,8 @@
 
 .flex{
   display: flex;
+  flex-direction: row;
   gap: 20px;
-  width: 90%;
 }
 
 .subtitles{
@@ -78,6 +77,10 @@
 
 @media (max-width: 1000px){
   .c{
+    display: inline;
+  }
+
+  .flex{
     display: inline;
   }
 }

@@ -49,6 +49,7 @@ const getDbVideogames = async () => {
       rating: g.rating,
       platforms: " " +g.platforms+ " ",
       genres: a+ " ",
+      createdInDb: g.createdInDb
     }
   })
 
@@ -102,6 +103,7 @@ const getVideogameById = async (id) => {
       released: resultDb.released,
       description: resultDb.description,
       rating: resultDb.rating,
+      createdInDb: resultDb.createdInDb,
       platforms: resultDb.platforms + " ",
       genres: resultDb.genres.map(g=>" " + g.name) + " ",
     }
