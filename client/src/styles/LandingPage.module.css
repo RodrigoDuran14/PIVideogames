@@ -8,6 +8,8 @@ h1 {
   color: #fff;
   text-shadow: 5px 5px 5px  #000000;
   -webkit-text-stroke: 2.5px black;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn{
@@ -49,4 +51,15 @@ h1 {
 
 .btn:hover::before{
   transform: scaleX(1);
+}
+
+@media (max-widt: 600px ){
+  .title{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;  
+  }
+  h1{
+    font-size: 1.5rem;
+  }
 }
