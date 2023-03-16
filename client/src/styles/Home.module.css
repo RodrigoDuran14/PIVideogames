@@ -6,6 +6,7 @@
 .select{
   margin-top: 10px;
   margin-left: 25px;
+  background-color: #dadadaef;
   font-size: 1.2rem;
   border: none;
   border-radius: 15px;
@@ -32,6 +33,7 @@
   padding: 5px;
   cursor: pointer;
   box-shadow: 4px 4px 4px #000;
+  background-color: #dadadaef;
 }
 
 .btn:hover{

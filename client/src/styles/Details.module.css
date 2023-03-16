@@ -83,4 +83,9 @@
   .flex{
     display: inline;
   }
+
+  .imageContainer{
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
