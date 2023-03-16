@@ -16,7 +16,7 @@ export const getVideogames = () => {
   return async (dispatch) => {
     dispatch(loading());
     try {
-      const allVideogames = await axios.get("http://localhost:3001/games");
+      const allVideogames = await axios.get("/games");
       dispatch({
         type: GET_VIDEOGAMES,
         payload: allVideogames.data,
@@ -32,7 +32,7 @@ export const getVideogamesById = (id) => {
   return async (dispatch) => {
     dispatch(loading())
     try {
-      const gameDetail = await axios.get(`http://localhost:3001/games/${id}`);
+      const gameDetail = await axios.get(`/games/${id}`);
       dispatch({
         type: GET_VIDEOGAME_BY_ID,
         payload: gameDetail.data,
@@ -46,16 +46,23 @@ export const getVideogamesById = (id) => {
 
 export const getVideogameByName = (name) => {
   return async (dispatch) => {
+    dispatch(loading())
     try {
       const videogameName = await axios.get(
-        `http://localhost:3001/games?name=${name}`
+        `/games?name=${name}`
       );
-      return dispatch({
+      dispatch({
         type: GET_VIDEOGAME_BY_NAME,
         payload: videogameName.data,
       });
+      dispatch(ready())
     } catch (error) {
-      console.log("Error in action GET_VIDEOGAME_BY_NAME ", error);
+      const resultF = await axios.get("/games");
+      dispatch({
+        type: GET_VIDEOGAME_BY_NAME,
+        payload: resultF.data,
+      })
+      dispatch(ready())
     }
   };
 };
@@ -64,7 +71,7 @@ export const postVideogame = (payload) => {
   return async (dispatch) => {
     try {
       var newVideogame = await axios.post(
-        "http://localhost:3001/games",
+        "/games",
         payload
       );
       return newVideogame;
@@ -77,7 +84,7 @@ export const postVideogame = (payload) => {
 export const getGenres = () => {
   return async (dispatch) => {
     try {
-      const allGenres = await axios.get("http://localhost:3001/genres");
+      const allGenres = await axios.get("/genres");
       return dispatch({
         type: GET_GENRES,
         payload: allGenres.data,
