@@ -8,16 +8,20 @@ import {
   FILTER_BY_ORIGIN,
   ORDER_BY_NAME,
   ORDER_BY_RATING,
+  LOADING,
+  READY,
 } from "./action_types";
 
 export const getVideogames = () => {
   return async (dispatch) => {
+    dispatch(loading());
     try {
       const allVideogames = await axios.get("http://localhost:3001/games");
-      return dispatch({
+      dispatch({
         type: GET_VIDEOGAMES,
         payload: allVideogames.data,
       });
+      dispatch(ready());
     } catch (error) {
       console.log("Error in action GET_VIDEOGAMES ", error);
     }
@@ -26,12 +30,14 @@ export const getVideogames = () => {
 
 export const getVideogamesById = (id) => {
   return async (dispatch) => {
+    dispatch(loading())
     try {
       const gameDetail = await axios.get(`http://localhost:3001/games/${id}`);
-      return dispatch({
+      dispatch({
         type: GET_VIDEOGAME_BY_ID,
         payload: gameDetail.data,
       });
+      dispatch(ready())
     } catch (error) {
       console.log("Error in action GET_VIDEOGAME_BY_ID ", error);
     }
@@ -109,3 +115,15 @@ export const orderByRating = (payload) => {
     payload,
   };
 };
+
+export const loading = () => {
+  return {
+    type: LOADING,
+  }
+}
+
+export const ready = () =>{
+  return {
+    type: READY,
+  }
+}

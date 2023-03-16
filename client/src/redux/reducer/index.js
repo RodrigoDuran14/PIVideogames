@@ -8,6 +8,8 @@ import {
   ORDER_BY_NAME,
   ORDER_BY_RATING,
   POST_VIDEOGAME,
+  LOADING,
+  READY,
 } from "../actions/action_types.js";
 
 const initialState = {
@@ -15,6 +17,7 @@ const initialState = {
   allVideogames: [],
   gamesDetails: [],
   genres: [],
+  display: false,
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -74,7 +77,7 @@ const rootReducer = (state = initialState, action) => {
 
     case ORDER_BY_NAME:
       let sortedByName =
-        action.payload === "ASC"
+        action.payload === "ASCNAME"
           ? state.videogames.sort(function (a, b) {
               if (a.name > b.name) {
                 return 1;
@@ -100,7 +103,7 @@ const rootReducer = (state = initialState, action) => {
 
     case ORDER_BY_RATING:
       let sortedByRating =
-        action.payload === "ASC"
+        action.payload === "ASCRATING"
           ? state.videogames.sort(function (a, b) {
               if (a.rating > b.rating) {
                 return -1;
@@ -123,6 +126,18 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         videogames: sortedByRating,
       };
+
+    case LOADING: 
+      return {
+        ...state,
+        display: true,
+      }
+
+    case READY:
+      return {
+        ...state,
+        display: false
+      }
 
     default:
       return state;

@@ -7,3 +7,5 @@ export const FILTER_BY_ORIGIN = "FILTER_BY_ORIGIN";
 export const ORDER_BY_NAME = "ORDER_BY_NAME";
 export const ORDER_BY_RATING = "ORDER_BY_RATING";
 export const POST_VIDEOGAME = "POST_VIDEOGAME";
+export const LOADING = "LOADING";
+export const READY = "READY";
